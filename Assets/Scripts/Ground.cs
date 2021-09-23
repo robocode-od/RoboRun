@@ -10,4 +10,8 @@ public class Ground : MonoBehaviour
     {
         _movement = GetComponent<Movement>();
     }
+    private void Update()
+    {
+        _movement.Move(Vector2.left);
+    }
 }
