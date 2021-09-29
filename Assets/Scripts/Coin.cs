@@ -13,4 +13,12 @@ public class Coin : MonoBehaviour
     {
         _movement.Move(Vector2.left);
     }
+    public void PickUp()
+    {
+        Destroy(gameObject);
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
