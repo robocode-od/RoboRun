@@ -13,4 +13,9 @@ public class Obstacle : MonoBehaviour
     {
         _movement.Move(Vector2.left);
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

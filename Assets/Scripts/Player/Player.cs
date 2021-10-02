@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Wallet _wallet;
     private Jumper _jumper;
     private bool _isGrounded;
     private void Awake()
     {
         _jumper = GetComponent<Jumper>();
+        _wallet = GetComponent<Wallet>();
     }
     private void Update()
     {
@@ -24,6 +26,14 @@ public class Player : MonoBehaviour
         if(collision.collider.TryGetComponent(out Ground ground))
         {
             _isGrounded = true;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out Coin coin))
+        {
+            _wallet.AddCoin();  
+            coin.Destroy();
         }
     }
 }
