@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    // Это спавнер
+
     [SerializeField] private GameObject _spawnObject;
     [SerializeField] private float _spawnInterval;
 
