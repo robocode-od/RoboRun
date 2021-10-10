@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Это спавнер
-
-    [SerializeField] private GameObject _spawnObject;
+    [SerializeField] private GameObject[] _spawnObjects;
     [SerializeField] private float _spawnInterval;
 
+
+
     private void Start()
-    {
+    { 
         InvokeRepeating("SpawnObject", 0, _spawnInterval);
     }
 
     private void SpawnObject()
     {
-        Instantiate(_spawnObject, transform.position, Quaternion.identity);
+        int spawnObjectIndex = Random.Range(0, _spawnObjects.Length);
+        Instantiate(_spawnObjects[spawnObjectIndex], transform.position, Quaternion.identity);
     }
 }

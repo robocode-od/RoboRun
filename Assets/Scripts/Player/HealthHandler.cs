@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _maxHealth = 3;
+    [SerializeField] private TMP_Text _healthText;
+    private int _currentHealth;
+
+    private void Start()
     {
-        
+        _currentHealth = _maxHealth;
+        SetText();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void SetText()
     {
-        
+        _healthText.text = _currentHealth.ToString();
+    }
+
+    public void ApplyDamage(int damage)
+    {
+        _currentHealth -= damage;
+        SetText();
+        if (_currentHealth <= 0)
+            Die();
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

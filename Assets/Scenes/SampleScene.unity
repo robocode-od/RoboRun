@@ -1169,7 +1169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e362182531d4d7449043bad3ecbf375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnObject: {fileID: 3559706273752663312, guid: be7da707a55449345860e1d8c82f33b0, type: 3}
+  _spawnObjects:
+  - {fileID: 3559706273752663312, guid: be7da707a55449345860e1d8c82f33b0, type: 3}
   _spawnInterval: 3
 --- !u!4 &882543062
 Transform:
@@ -1281,7 +1282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65.45, y: 0}
+  m_AnchoredPosition: {x: -65.45001, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!61 &942654352 stripped
@@ -1303,7 +1304,9 @@ GameObject:
   - component: {fileID: 986013888}
   - component: {fileID: 986013886}
   - component: {fileID: 986013892}
+  - component: {fileID: 986013893}
   - component: {fileID: 986013891}
+  - component: {fileID: 986013894}
   m_Layer: 0
   m_Name: RoboCat1
   m_TagString: Untagged
@@ -1451,6 +1454,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1594358465}
+--- !u!114 &986013893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986013885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ade61ad157c7448a12c9fb6dfaf75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
+  _healthText: {fileID: 312842787}
+--- !u!95 &986013894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986013885}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e48944bcf0e04245b8b46ad97c8b216, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1019882594 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8531783176943110991, guid: fb56d32414565d84dbf276f947420e1b, type: 3}
@@ -1857,7 +1893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e362182531d4d7449043bad3ecbf375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnObject: {fileID: 2258070607918979757, guid: 471e93cb28372364e8c3958cf0131ca3, type: 3}
+  _spawnObjects:
+  - {fileID: 2258070607918979757, guid: 471e93cb28372364e8c3958cf0131ca3, type: 3}
+  - {fileID: 7667320120553366194, guid: 7a5105ce1e41542448bbbbb52267e0e1, type: 3}
   _spawnInterval: 2
 --- !u!4 &1907188121
 Transform:

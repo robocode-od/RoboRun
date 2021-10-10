@@ -5,12 +5,19 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Wallet _wallet;
+    private HealthHandler _healthHandler;
     private Jumper _jumper;
+    private Animator _animator;
+    
     private bool _isGrounded;
+
     private void Awake()
     {
         _jumper = GetComponent<Jumper>();
         _wallet = GetComponent<Wallet>();
+        _healthHandler = GetComponent<HealthHandler>();
+        _animator = GetComponent<Animator>();
+
     }
     private void Update()
     {
@@ -18,6 +25,7 @@ public class Player : MonoBehaviour
         {
             _isGrounded = false;
             _jumper.Jump();
+            _animator.SetTrigger("isJump");
         }
     }
 
@@ -34,6 +42,10 @@ public class Player : MonoBehaviour
         {
             _wallet.AddCoin();  
             coin.Destroy();
+        }
+        if (collision.TryGetComponent(out Obstacle enemy))
+        {
+            _healthHandler.ApplyDamage(enemy.GetDamage());
         }
     }
 }
